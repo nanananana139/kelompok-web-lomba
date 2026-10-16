@@ -1,12 +1,12 @@
-```html
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alur Penjurian | IT Fest 6.0</title>
+    <title>Alur Penjurian IT Fest 6.0</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -16,334 +16,321 @@
         }
 
         :root {
-            --purple: #795c9d;
-            --pink: #c77ba4;
-            --dark: #292638;
-            --muted: #777486;
-            --line: #e8e5ed;
-            --bg: #f7f6f9;
-            --white: #ffffff;
+            --purple: #8c6bb1;
+            --pink: #df79a9;
+            --blue: #55b6d7;
+            --green: #9dcc43;
+            --dark: #35304c;
+            --muted: #88839c;
+            --line: #e7e0f0;
+            --bg: #f8f4fc;
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: var(--bg);
+            font-family: 'Fredoka', sans-serif;
             color: var(--dark);
-            line-height: 1.7;
+            background: linear-gradient(135deg, #795c9d, #c77ba4, #f2a2b7);
+            min-height: 100vh;
+            padding: 35px 5%;
+            line-height: 1.6;
         }
 
-        /* Header */
-        header {
-            background: var(--white);
-            border-bottom: 1px solid var(--line);
-            padding: 28px 7%;
-        }
-
-        .header-inner {
-            max-width: 1200px;
+        .container {
+            max-width: 1450px;
             margin: auto;
         }
 
-        .eyebrow {
-            color: var(--purple);
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 1.2px;
-            text-transform: uppercase;
-        }
-
-        header h1 {
-            font-size: 30px;
-            font-weight: 700;
-            margin: 8px 0 4px;
-            letter-spacing: -0.8px;
-        }
-
-        header p {
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        /* Navigasi */
-        nav {
-            background: var(--white);
-            border-bottom: 1px solid var(--line);
-            padding: 0 7%;
-        }
-
-        .nav-inner {
-            max-width: 1200px;
-            margin: auto;
+        .header {
+            background: rgba(255, 255, 255, 0.97);
+            border: 2px solid white;
+            border-radius: 25px;
+            padding: 35px 40px;
+            margin-bottom: 28px;
+            box-shadow: 7px 7px 0 rgba(53, 48, 76, 0.12);
             display: flex;
-            gap: 28px;
-            overflow-x: auto;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .label {
+            display: inline-block;
+            background: #f4edff;
+            color: var(--purple);
+            border: 1px solid #dfd0ff;
+            padding: 8px 17px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: clamp(32px, 4vw, 48px);
+            line-height: 1.15;
+            margin-bottom: 12px;
+        }
+
+        .header p {
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        nav {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
         nav a {
-            display: block;
-            padding: 15px 0;
-            color: var(--muted);
             text-decoration: none;
-            font-size: 13px;
+            padding: 13px 18px;
+            border-radius: 14px;
+            color: white;
             font-weight: 600;
-            white-space: nowrap;
-            border-bottom: 2px solid transparent;
+            background: var(--pink);
+            transition: 0.2s;
         }
 
-        nav a:hover,
-        nav a:focus {
-            color: var(--purple);
-            border-bottom-color: var(--purple);
+        nav a:nth-child(2) {
+            background: var(--purple);
         }
 
-        /* Konten */
-        main {
-            max-width: 1200px;
-            margin: 35px auto;
-            padding: 0 25px;
+        nav a:nth-child(3) {
+            background: var(--blue);
         }
 
-        .page-heading {
-            margin-bottom: 24px;
+        nav a:hover {
+            transform: translateY(-3px);
+            filter: brightness(1.05);
         }
 
-        .page-heading h2 {
-            font-size: 23px;
-            letter-spacing: -0.5px;
-            margin-bottom: 4px;
+        .intro {
+            margin-bottom: 22px;
+            color: white;
         }
 
-        .page-heading p {
-            font-size: 14px;
-            color: var(--muted);
+        .intro h2 {
+            font-size: 30px;
+            margin-bottom: 5px;
         }
 
-        /* Tahapan penjurian */
+        .intro p {
+            color: #fff7ff;
+        }
+
         .alur {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            margin-bottom: 30px;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+            margin-bottom: 28px;
+        }
+
+        .card, section {
+            background: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 22px;
+            padding: 28px;
+            box-shadow: 6px 6px 0 rgba(53, 48, 76, 0.1);
         }
 
         .card {
-            background: var(--white);
-            border: 1px solid var(--line);
-            padding: 22px;
+            border-top: 6px solid var(--pink);
         }
 
-        .nomor {
-            color: var(--pink);
-            font-size: 13px;
-            font-weight: 700;
-            margin-bottom: 10px;
+        .card:nth-child(2) {
+            border-top-color: var(--blue);
+        }
+
+        .card:nth-child(3) {
+            border-top-color: var(--green);
         }
 
         .card h3 {
-            font-size: 16px;
-            margin-bottom: 7px;
+            font-size: 21px;
+            margin-bottom: 10px;
         }
 
         .card p {
             color: var(--muted);
-            font-size: 13px;
         }
 
-        /* Bagian tabel */
         section {
-            background: var(--white);
-            border: 1px solid var(--line);
-            padding: 26px;
-            margin-bottom: 24px;
+            margin-bottom: 25px;
             scroll-margin-top: 20px;
         }
 
         section h2 {
-            font-size: 19px;
+            color: var(--dark);
+            font-size: 26px;
             margin-bottom: 18px;
         }
 
         section h3 {
-            font-size: 15px;
-            margin: 24px 0 12px;
+            color: var(--pink);
+            margin: 25px 0 12px;
         }
 
         .table-wrap {
             width: 100%;
             overflow-x: auto;
+            border-radius: 12px;
+            border: 1px solid var(--line);
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 13px;
             min-width: 400px;
         }
 
-        th {
+        th, td {
+            padding: 14px 16px;
             text-align: left;
-            padding: 13px 15px;
-            background: #f5f2f9;
-            color: var(--purple);
-            font-weight: 700;
             border-bottom: 1px solid var(--line);
         }
 
-        td {
-            padding: 13px 15px;
-            border-bottom: 1px solid var(--line);
+        th {
+            background: var(--purple);
+            color: white;
+            font-weight: 600;
         }
 
-        tbody tr:last-child td {
-            border-bottom: none;
+        tbody tr:nth-child(even) {
+            background: #faf7ff;
         }
 
         tbody tr:hover {
-            background: #faf9fc;
+            background: #f2eaff;
         }
 
         .panduan {
-            border-left: 3px solid var(--purple);
-            padding: 5px 0 5px 17px;
+            background: #faf7ff;
+            border: 1px solid var(--line);
+            border-radius: 15px;
+            padding: 20px;
         }
 
         .panduan p {
-            font-size: 13px;
-            margin: 7px 0;
+            padding: 7px 0;
         }
 
         .catatan {
             display: block;
-            margin-top: 15px;
             color: var(--muted);
-            font-size: 12px;
+            margin-top: 15px;
+            font-size: 14px;
         }
 
         footer {
-            border-top: 1px solid var(--line);
             text-align: center;
-            color: var(--muted);
-            font-size: 12px;
-            padding: 22px;
-            background: var(--white);
+            color: white;
+            padding: 22px 0 5px;
         }
 
-        /* Tampilan layar kecil */
-        @media (max-width: 760px) {
-            header {
-                padding: 24px;
+        @media (max-width: 800px) {
+            body {
+                padding: 20px 4%;
             }
 
-            nav {
-                padding: 0 24px;
-            }
-
-            main {
-                margin: 25px auto;
-                padding: 0 16px;
+            .header {
+                padding: 25px;
             }
 
             .alur {
                 grid-template-columns: 1fr;
-                gap: 10px;
             }
 
-            .card {
-                padding: 18px;
+            nav a {
+                flex: 1 1 auto;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 22px;
             }
 
-            section {
-                padding: 18px;
+            .card, section {
+                padding: 20px;
             }
 
-            header h1 {
+            .intro h2 {
                 font-size: 25px;
+            }
+
+            section h2 {
+                font-size: 23px;
             }
         }
     </style>
 </head>
 
 <body>
+<div class="container">
 
-<header>
-    <div class="header-inner">
-        <span class="eyebrow">IT Fest 6.0 / Panitia</span>
-        <h1>Alur Penjurian</h1>
-        <p>Panduan seleksi karya, penilaian, dan penentuan pemenang.</p>
-    </div>
-</header>
+    <header class="header">
+        <div>
+            <span class="label">IT FEST 6.0 • PANITIA</span>
+            <h1>Alur Penjurian</h1>
+            <p>Panduan seleksi karya, penilaian, dan penentuan pemenang.</p>
+        </div>
 
-<nav>
-    <div class="nav-inner">
-        <a href="#seleksi">Seleksi Karya</a>
-        <a href="#penilaian">Penilaian</a>
-        <a href="#ranking">Ranking</a>
-    </div>
-</nav>
+        <nav>
+            <a href="#seleksi">Seleksi Karya</a>
+            <a href="#penilaian">Penilaian</a>
+            <a href="#ranking">Ranking</a>
+        </nav>
+    </header>
 
-<main>
-    <div class="page-heading">
-        <h2>Proses Penjurian</h2>
+    <div class="intro">
+        <h2>Panduan untuk Juri</h2>
         <p>Ikuti tiga tahapan berikut untuk menentukan pemenang lomba.</p>
     </div>
 
     <div class="alur">
         <div class="card">
-            <div class="nomor">TAHAP 01</div>
-            <h3>Seleksi Karya</h3>
-            <p>Periksa kelengkapan berkas, kesesuaian tema, dan aturan lomba.</p>
+            <h3>01. Seleksi Karya</h3>
+            <p>Periksa kelengkapan, kesesuaian tema, dan aturan lomba.</p>
         </div>
 
         <div class="card">
-            <div class="nomor">TAHAP 02</div>
-            <h3>Penilaian</h3>
-            <p>Nilai karya berdasarkan kriteria dan bobot yang telah ditetapkan.</p>
+            <h3>02. Penilaian</h3>
+            <p>Nilai karya berdasarkan kriteria dan bobot yang ditetapkan.</p>
         </div>
 
         <div class="card">
-            <div class="nomor">TAHAP 03</div>
-            <h3>Penentuan Ranking</h3>
+            <h3>03. Ranking</h3>
             <p>Urutkan peserta berdasarkan nilai akhir tertinggi.</p>
         </div>
     </div>
 
     <section id="seleksi">
-        <h2>01. Seleksi Karya</h2>
+        <h2>1. Seleksi Karya</h2>
+
         <div class="table-wrap">
             <table>
                 <thead>
-                    <tr>
-                        <th>Kriteria</th>
-                        <th>Panduan</th>
-                    </tr>
+                    <tr><th>Kriteria</th><th>Panduan</th></tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Kelengkapan</td>
-                        <td>Pastikan seluruh berkas yang diwajibkan telah tersedia.</td>
-                    </tr>
-                    <tr>
-                        <td>Kesesuaian tema</td>
-                        <td>Periksa relevansi karya dengan tema dan kategori lomba.</td>
-                    </tr>
-                    <tr>
-                        <td>Orisinalitas</td>
-                        <td>Periksa keaslian karya sesuai ketentuan lomba.</td>
-                    </tr>
+                    <tr><td>Kelengkapan</td><td>Pastikan seluruh berkas tersedia.</td></tr>
+                    <tr><td>Kesesuaian tema</td><td>Periksa relevansi karya dengan tema lomba.</td></tr>
+                    <tr><td>Orisinalitas</td><td>Periksa keaslian sesuai ketentuan lomba.</td></tr>
                 </tbody>
             </table>
         </div>
     </section>
 
     <section id="penilaian">
-        <h2>02. Penilaian Karya</h2>
+        <h2>2. Penilaian Karya</h2>
+
         <div class="table-wrap">
             <table>
                 <thead>
-                    <tr>
-                        <th>Kriteria</th>
-                        <th>Bobot</th>
-                    </tr>
+                    <tr><th>Kriteria</th><th>Bobot</th></tr>
                 </thead>
                 <tbody>
                     <tr><td>Orisinalitas</td><td>25%</td></tr>
@@ -370,15 +357,12 @@
     </section>
 
     <section id="ranking">
-        <h2>03. Urutan Pemenang / Ranking</h2>
+        <h2>3. Urutan Pemenang / Ranking</h2>
+
         <div class="table-wrap">
             <table>
                 <thead>
-                    <tr>
-                        <th>Ranking</th>
-                        <th>Tim</th>
-                        <th>Nilai</th>
-                    </tr>
+                    <tr><th>Ranking</th><th>Tim</th><th>Nilai</th></tr>
                 </thead>
                 <tbody>
                     <tr><td>1</td><td>Tim Alpha</td><td>92,50</td></tr>
@@ -388,16 +372,13 @@
             </table>
         </div>
 
-        <small class="catatan">
-            Pemenang ditentukan berdasarkan nilai tertinggi. Jika nilai sama, gunakan aturan pemecah seri resmi.
-        </small>
+        <p class="catatan">
+            Urutan pemenang ditentukan dari nilai tertinggi. Jika nilai sama, gunakan aturan pemecah seri resmi.
+        </p>
     </section>
-</main>
 
-<footer>
-    IT Fest 6.0 &copy; 2026
-</footer>
-
+    <footer>IT Fest 6.0 © 2026</footer>
+</div>
 </body>
 </html>
 ```
