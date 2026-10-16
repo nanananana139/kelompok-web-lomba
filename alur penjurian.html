@@ -3,178 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alur Penjurian IT Fest 6.0</title>
-    <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f8f5fc;
-        color: #333;
-        line-height: 1.6;
-        padding: 20px;
-    }
-    header {
-        background-color: #795c9d;
-        color: white;
-        padding: 25px;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    
-    header h1 {
-        margin-bottom: 10px;
-    }
-    
-    nav {
-        background-color: #c77ba4;
-        padding: 12px;
-        margin-bottom: 20px;
-    }
-    
-    nav a {
-        color: white;
-        text-decoration: none;
-        margin-right: 20px;
-    }
-    
-    nav a:hover {
-        text-decoration: underline;
-    }
-    
-    main {
-        max-width: 1000px;
-        margin: auto;
-    }
-    
-    section {
-        background-color: white;
-        padding: 20px;
-        margin-bottom: 20px;
-        border: 1px solid #ddd;
-    }
-    
-    section h2 {
-        color: #795c9d;
-        margin-bottom: 10px;
-    }
-    
-    section h3 {
-        color: #c77ba4;
-        margin-top: 15px;
-        margin-bottom: 10px;
-    }
-
-    ul, ol {
-        padding-left: 25px;
-    }
-    
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 15px;
-    }
-    
-    th, td {
-        border: 1px solid #ddd;
-        padding: 10px;
-        text-align: left;
-    }
-    
-    th {
-        background-color: #795c9d;
-        color: white;
-    }
-    
-    footer {
-        text-align: center;
-        padding: 15px;
-        color: #795c9d;
-    }
-    </style>
-
+    <title>Meja Kontrol - IT FEST 6.0</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header>
-    <h1>IT Fest 6.0</h1>
-    <p>Alur Penjurian dan Panduan Juri</p>
-</header>
-
-<nav>
-    <a href="#seleksi">Seleksi Karya</a>
-    <a href="#penilaian">Penilaian</a>
-    <a href="#ranking">Ranking</a>
-</nav>
-
-<main>
-    <h2>Alur Penjurian</h2>
-    <p>Ikuti tiga tahapan berikut untuk menentukan pemenang lomba.</p>
-
-    <div class="alur">
-        <div class="card">
-            <h3>01. Seleksi Karya</h3>
-            <p>Periksa kelengkapan, kesesuaian tema, dan aturan lomba.</p>
+    <header class="header">
+        <div class="brand">
+            <span class="label">IT FEST 6.0 • PANITIA</span>
+            <h1>Meja Kontrol</h1>
+            <p>Kelola event dan peserta dari sini.</p>
         </div>
-        <div class="card">
-            <h3>02. Penilaian</h3>
-            <p>Nilai karya berdasarkan kriteria dan bobot yang ditetapkan.</p>
-        </div>
-        <div class="card">
-            <h3>03. Ranking</h3>
-            <p>Urutkan peserta berdasarkan nilai akhir tertinggi.</p>
-        </div>
-    </div>
 
-    <section id="seleksi">
-        <h2>1. Seleksi Karya</h2>
-        <table>
-            <tr><th>Kriteria</th><th>Panduan</th></tr>
-            <tr><td>Kelengkapan</td><td>Pastikan seluruh berkas tersedia.</td></tr>
-            <tr><td>Kesesuaian tema</td><td>Periksa relevansi karya dengan tema lomba.</td></tr>
-            <tr><td>Orisinalitas</td><td>Periksa keaslian sesuai ketentuan lomba.</td></tr>
-        </table>
-    </section>
+        <nav class="navigation">
+            <a href="#" class="btn purple">↓ Export Excel</a>
+            <a href="#" class="btn pink">▤ 1 File Semua Event</a>
+            <a href="#" class="btn blue">▣ Semua Event</a>
+            <a href="#" class="btn green">＋ Event Baru</a>
+            <a href="alur penjurian.html" class="btn pink">♜ Alur Penjurian</a>
+            <a href="#" class="btn white">Keluar</a>
+        </nav>
+    </header>
 
-    <section id="penilaian">
-        <h2>2. Penilaian Karya</h2>
-        <table>
-            <tr><th>Kriteria</th><th>Bobot</th></tr>
-            <tr><td>Orisinalitas</td><td>25%</td></tr>
-            <tr><td>Inovasi</td><td>25%</td></tr>
-            <tr><td>Kesesuaian tema</td><td>20%</td></tr>
-            <tr><td>Kualitas dan implementasi</td><td>30%</td></tr>
-            <tr><th>Total</th><th>100%</th></tr>
-        </table>
+    <main>
+        <section class="statistics">
+            <div class="stat-card">
+                <div>
+                    <p>TOTAL EVENTS</p>
+                    <h2>3</h2>
+                    <small>Semua event</small>
+                </div>
+                <span class="stat-icon pink-bg">▣</span>
+            </div>
 
-        <h3>Panduan untuk Juri</h3>
-        <div class="panduan">
-            <p><b>90–100:</b> Sangat baik, memenuhi kriteria dengan sangat kuat.</p>
-            <p><b>80–89:</b> Baik, sebagian besar kriteria terpenuhi.</p>
-            <p><b>70–79:</b> Cukup, masih terdapat beberapa kekurangan.</p>
-            <p><b>Di bawah 70:</b> Perlu perbaikan pada kriteria penting.</p>
-            <p><b>Etika:</b> Nilai secara objektif, konsisten, dan tanpa memihak peserta.</p>
-        </div>
-        <p><i>Catatan: Bobot dan skala di atas adalah contoh. Sesuaikan dengan panduan resmi setiap kategori lomba.</i></p>
-    </section>
+            <div class="stat-card">
+                <div>
+                    <p>TOTAL PESERTA</p>
+                    <h2>22</h2>
+                    <small>Pendaftar terdaftar</small>
+                </div>
+                <span class="stat-icon blue-bg">♧</span>
+            </div>
 
-    <section id="ranking">
-        <h2>3. Urutan Pemenang / Ranking</h2>
-        <table>
-            <tr><th>Ranking</th><th>Tim</th><th>Nilai</th></tr>
-            <tr><td>1</td><td>Tim Alpha</td><td>92,50</td></tr>
-            <tr><td>2</td><td>Tim Beta</td><td>88,75</td></tr>
-            <tr><td>3</td><td>Tim Gamma</td><td>85,25</td></tr>
-        </table>
-        <p>Urutan pemenang ditentukan dari nilai tertinggi. Jika nilai sama, gunakan aturan pemecah seri resmi.</p>
-    </section>
-</main>
+            <div class="stat-card">
+                <div>
+                    <p>PERLU VERIFIKASI</p>
+                    <h2 class="pink-text">15</h2>
+                    <small>Bukti bayar & berkas</small>
+                </div>
+                <span class="stat-icon green-bg">◷</span>
+            </div>
+        </section>
 
-<footer>IT Fest 6.0 © 2026</footer>
+        <section class="content">
+
+            <div class="panel">
+                <div class="panel-heading">
+                    <div>
+                        <h3>Rundown Event</h3>
+                        <p>Yang paling dekat tampil duluan</p>
+                    </div>
+                    <a href="#" class="view-all">Semua →</a>
+                </div>
+
+                <div class="event-list">
+
+                    <article class="event-card pink-border">
+                        <h4>Hackathon</h4>
+                        <p class="description">
+                            Ajang kolaborasi dan inovasi pemrograman.
+                            Peserta menyelesaikan tantangan teknologi
+                            dalam waktu terbatas.
+                        </p>
+                        <div class="event-info">
+                            <span>▣ 17 Agustus 2026</span>
+                            <span>◷ 08:00 – 23:59</span>
+                            <span>⌖ Universitas Paramadina</span>
+                        </div>
+                        <div class="progress-info">
+                            <span>Kuota terisi</span>
+                            <span>12 / 30</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-fill" style="width:40%"></div>
+                        </div>
+                        <div class="event-actions">
+                            <a href="#" class="btn navy">♙ Absensi TM</a>
+                            <a href="#" class="btn green">↓ Export Excel</a>
+                            <a href="#" class="btn blue">Edit</a>
+                            <a href="#" class="btn white">Hapus</a>
+                        </div>
+                    </article>
+
+                    <article class="event-card blue-border">
+                        <h4>Karya Tulis Ilmiah (KTI)</h4>
+                        <p class="description">
+                            Platform riset bagi mahasiswa untuk
+                            mengembangkan keterampilan akademis dan
+                            menyampaikan solusi inovatif.
+                        </p>
+                        <div class="event-info">
+                            <span>▣ 17 Agustus 2026</span>
+                            <span>◷ 08:00 – 23:59</span>
+                            <span>⌖ Universitas Paramadina</span>
+                        </div>
+                        <div class="progress-info">
+                            <span>Kuota terisi</span>
+                            <span>8 / 50</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-fill" style="width:16%"></div>
+                        </div>
+                        <div class="event-actions">
+                            <a href="#" class="btn navy">♙ Absensi TM</a>
+                            <a href="#" class="btn green">↓ Export Excel</a>
+                            <a href="#" class="btn blue">Edit</a>
+                            <a href="#" class="btn white">Hapus</a>
+                        </div>
+                    </article>
+
+                    <article class="event-card green-border">
+                        <h4>Internet of Things (IoT)</h4>
+                        <p class="description">
+                            Kompetisi pengembangan perangkat IoT
+                            dan aplikasi untuk menyelesaikan
+                            permasalahan nyata.
+                        </p>
+                        <div class="event-info">
+                            <span>▣ 17 Agustus 2026</span>
+                            <span>◷ 08:00 – 23:59</span>
+                            <span>⌖ Universitas Paramadina</span>
+                        </div>
+                        <div class="progress-info">
+                            <span>Kuota terisi</span>
+                            <span>6 / 40</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-fill" style="width:15%"></div>
+                        </div>
+                        <div class="event-actions">
+                            <a href="#" class="btn navy">♙ Absensi TM</a>
+                            <a href="#" class="btn green">↓ Export Excel</a>
+                            <a href="#" class="btn blue">Edit</a>
+                            <a href="#" class="btn white">Hapus</a>
+                        </div>
+                    </article>
+
+                    <article class="event-card purple-border">
+                        <h4>Talkshow IT Fest 6.0</h4>
+                        <p class="description">
+                            Talkshow dengan pembicara inspiratif
+                            seputar teknologi, pendidikan, dan masa
+                            depan digital.
+                        </p>
+                        <div class="event-info">
+                            <span>▣ 17 Agustus 2026</span>
+                            <span>◷ 08:00 – 23:59</span>
+                            <span>⌖ Universitas Paramadina</span>
+                        </div>
+                        <div class="progress-info">
+                            <span>Kuota terisi</span>
+                            <span>4 / 80</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-fill" style="width:5%"></div>
+                        </div>
+                        <div class="event-actions">
+                            <a href="#" class="btn navy">♙ Absensi TM</a>
+                            <a href="#" class="btn green">↓ Export Excel</a>
+                            <a href="#" class="btn blue">Edit</a>
+                            <a href="#" class="btn white">Hapus</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+
+            <aside class="sidebar">
+
+                <div class="panel guest-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <h3>Guest List</h3>
+                            <p>Pendaftar paling baru</p>
+                        </div>
+                        <a href="#" class="view-all">Semua →</a>
+                    </div>
+
+                    <div class="guest">
+                        <span class="avatar avatar-pink">A</span>
+                        <div class="guest-detail">
+                            <h4>Alya Rahma</h4>
+                            <p>Hackathon • Tim Komunikasi</p>
+                        </div>
+                        <span class="status">Terdaftar</span>
+                    </div>
+
+                    <div class="guest">
+                        <span class="avatar avatar-pink">A</span>
+                        <div class="guest-detail">
+                            <h4>Aurelia Salsabilla</h4>
+                            <p>KTI • Tim Peneliti</p>
+                        </div>
+                        <span class="status">Terdaftar</span>
+                    </div>
+                </div>
+
+                <div class="panel quick-panel">
+                    <h3>Aksi Cepat</h3>
+                    <a href="#" class="btn green full-btn">＋ Buat Event Baru</a>
+                    <a href="#" class="btn blue full-btn">▣ Kelola Events</a>
+                    <a href="#" class="btn pink full-btn">♧ Kelola Peserta</a>
+                </div>
+
+            </aside>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 IT FEST 6.0 • Kelompok Lomba</p>
+    </footer>
 
 </body>
 </html>
