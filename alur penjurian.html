@@ -1,12 +1,12 @@
-
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alur Penjurian IT Fest 6.0</title>
+    <title>Alur Penjurian | IT Fest 6.0</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -16,167 +16,225 @@
         }
 
         :root {
-            --purple: #8c6bb1;
-            --pink: #df79a9;
-            --blue: #55b6d7;
-            --green: #9dcc43;
-            --dark: #35304c;
-            --muted: #88839c;
-            --line: #e7e0f0;
-            --bg: #f8f4fc;
+            --primary: #465fff;
+            --primary-light: #eef2ff;
+            --dark: #1d2939;
+            --muted: #667085;
+            --border: #e4e7ec;
+            --background: #f9fafb;
+            --white: #ffffff;
         }
 
         body {
-            font-family: 'Fredoka', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             color: var(--dark);
-            background: linear-gradient(135deg, #795c9d, #c77ba4, #f2a2b7);
-            min-height: 100vh;
-            padding: 35px 5%;
-            line-height: 1.6;
+            background: var(--background);
+            font-size: 14px;
         }
 
-        .container {
-            max-width: 1450px;
-            margin: auto;
-        }
-
-        .header {
-            background: rgba(255, 255, 255, 0.97);
-            border: 2px solid white;
-            border-radius: 25px;
-            padding: 35px 40px;
-            margin-bottom: 28px;
-            box-shadow: 7px 7px 0 rgba(53, 48, 76, 0.12);
+        /* Header */
+        .topbar {
+            height: 76px;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            gap: 25px;
-            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 0 30px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
-        .label {
-            display: inline-block;
-            background: #f4edff;
-            color: var(--purple);
-            border: 1px solid #dfd0ff;
-            padding: 8px 17px;
-            border-radius: 30px;
-            font-size: 13px;
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 21px;
             font-weight: 700;
-            margin-bottom: 20px;
         }
 
-        .header h1 {
-            font-size: clamp(32px, 4vw, 48px);
-            line-height: 1.15;
-            margin-bottom: 12px;
-        }
-
-        .header p {
-            color: var(--muted);
+        .brand-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 10px;
+            display: grid;
+            place-items: center;
             font-size: 17px;
         }
 
-        nav {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
+        .menu-button {
+            border: none;
+            background: transparent;
+            color: var(--muted);
+            font-size: 25px;
+            cursor: pointer;
         }
 
-        nav a {
+        /* Layout */
+        .layout {
+            display: flex;
+            min-height: calc(100vh - 76px);
+        }
+
+        .sidebar {
+            width: 250px;
+            flex-shrink: 0;
+            background: white;
+            border-right: 1px solid var(--border);
+            padding: 28px 18px;
+            transition: width 0.2s;
+        }
+
+        .sidebar-title {
+            color: #98a2b3;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin: 0 12px 15px;
+        }
+
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             text-decoration: none;
-            padding: 13px 18px;
-            border-radius: 14px;
-            color: white;
+            color: var(--muted);
+            padding: 12px;
+            border-radius: 7px;
+            margin-bottom: 5px;
             font-weight: 600;
-            background: var(--pink);
             transition: 0.2s;
         }
 
-        nav a:nth-child(2) {
-            background: var(--purple);
+        .sidebar a:hover,
+        .sidebar a.active {
+            color: var(--primary);
+            background: var(--primary-light);
         }
 
-        nav a:nth-child(3) {
-            background: var(--blue);
+        .sidebar .symbol {
+            width: 22px;
+            text-align: center;
+            font-size: 17px;
         }
 
-        nav a:hover {
-            transform: translateY(-3px);
-            filter: brightness(1.05);
+        /* Main content */
+        .main {
+            flex: 1;
+            min-width: 0;
+            padding: 30px;
         }
 
-        .intro {
+        .breadcrumb {
+            color: var(--muted);
+            font-size: 13px;
             margin-bottom: 22px;
-            color: white;
         }
 
-        .intro h2 {
-            font-size: 30px;
+        .breadcrumb span {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .page-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .page-heading h1 {
+            font-size: 26px;
+            letter-spacing: -0.7px;
+            margin-bottom: 7px;
+        }
+
+        .page-heading p {
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 7px 12px;
+            color: var(--primary);
+            background: var(--primary-light);
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        /* Tahapan */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+
+        .step-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 22px;
+        }
+
+        .step-number {
+            display: inline-grid;
+            place-items: center;
+            width: 38px;
+            height: 38px;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: 9px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .step-card h2 {
+            font-size: 15px;
+            margin-bottom: 9px;
+        }
+
+        .step-card p {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        /* Panel dan tabel */
+        .panel {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 24px;
+            scroll-margin-top: 95px;
+            overflow: hidden;
+        }
+
+        .panel-header {
+            padding: 22px 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .panel-header h2 {
+            font-size: 17px;
             margin-bottom: 5px;
         }
 
-        .intro p {
-            color: #fff7ff;
-        }
-
-        .alur {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 22px;
-            margin-bottom: 28px;
-        }
-
-        .card, section {
-            background: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            border-radius: 22px;
-            padding: 28px;
-            box-shadow: 6px 6px 0 rgba(53, 48, 76, 0.1);
-        }
-
-        .card {
-            border-top: 6px solid var(--pink);
-        }
-
-        .card:nth-child(2) {
-            border-top-color: var(--blue);
-        }
-
-        .card:nth-child(3) {
-            border-top-color: var(--green);
-        }
-
-        .card h3 {
-            font-size: 21px;
-            margin-bottom: 10px;
-        }
-
-        .card p {
+        .panel-header p {
             color: var(--muted);
-        }
-
-        section {
-            margin-bottom: 25px;
-            scroll-margin-top: 20px;
-        }
-
-        section h2 {
-            color: var(--dark);
-            font-size: 26px;
-            margin-bottom: 18px;
-        }
-
-        section h3 {
-            color: var(--pink);
-            margin: 25px 0 12px;
+            font-size: 13px;
         }
 
         .table-wrap {
             width: 100%;
             overflow-x: auto;
-            border-radius: 12px;
-            border: 1px solid var(--line);
         }
 
         table {
@@ -185,200 +243,370 @@
             min-width: 400px;
         }
 
-        th, td {
-            padding: 14px 16px;
-            text-align: left;
-            border-bottom: 1px solid var(--line);
-        }
-
         th {
-            background: var(--purple);
-            color: white;
-            font-weight: 600;
+            text-align: left;
+            padding: 14px 24px;
+            color: #475467;
+            background: #f9fafb;
+            font-size: 12px;
+            font-weight: 700;
+            border-bottom: 1px solid var(--border);
         }
 
-        tbody tr:nth-child(even) {
-            background: #faf7ff;
+        td {
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--border);
+            color: #475467;
+            line-height: 1.6;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
         }
 
         tbody tr:hover {
-            background: #f2eaff;
+            background: #fafbff;
         }
 
-        .panduan {
-            background: #faf7ff;
-            border: 1px solid var(--line);
-            border-radius: 15px;
-            padding: 20px;
+        .total-row {
+            background: #f9fafb;
+            font-weight: 700;
         }
 
-        .panduan p {
-            padding: 7px 0;
+        .guide {
+            padding: 22px 24px;
         }
 
-        .catatan {
+        .guide h3 {
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        .guide-item {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            line-height: 1.7;
+        }
+
+        .guide-item:last-child {
+            border-bottom: none;
+        }
+
+        .guide-item strong {
             display: block;
+            margin-bottom: 3px;
+        }
+
+        .guide-item p,
+        .note {
             color: var(--muted);
-            margin-top: 15px;
-            font-size: 14px;
+            font-size: 13px;
+        }
+
+        .note {
+            padding: 0 24px 22px;
+            line-height: 1.7;
         }
 
         footer {
             text-align: center;
-            color: white;
-            padding: 22px 0 5px;
+            padding: 24px;
+            color: var(--muted);
+            font-size: 12px;
         }
 
-        @media (max-width: 800px) {
-            body {
-                padding: 20px 4%;
-            }
-
-            .header {
-                padding: 25px;
-            }
-
-            .alur {
-                grid-template-columns: 1fr;
-            }
-
-            nav a {
-                flex: 1 1 auto;
-                text-align: center;
-            }
+        /* Sidebar untuk layar kecil */
+        .sidebar.closed {
+            display: none;
         }
 
-        @media (max-width: 480px) {
-            .header {
+        @media (max-width: 900px) {
+            .sidebar {
+                width: 210px;
+            }
+
+            .main {
                 padding: 22px;
             }
 
-            .card, section {
-                padding: 20px;
+            .steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .topbar {
+                height: 65px;
+                padding: 0 18px;
             }
 
-            .intro h2 {
-                font-size: 25px;
+            .brand {
+                font-size: 18px;
             }
 
-            section h2 {
+            .layout {
+                min-height: calc(100vh - 65px);
+            }
+
+            .sidebar {
+                position: fixed;
+                top: 65px;
+                bottom: 0;
+                left: 0;
+                z-index: 20;
+                width: 250px;
+                overflow-y: auto;
+                box-shadow: 8px 0 24px rgba(16, 24, 40, 0.08);
+            }
+
+            .main {
+                padding: 20px 14px;
+                width: 100%;
+            }
+
+            .page-heading h1 {
                 font-size: 23px;
+            }
+
+            .panel-header,
+            .guide {
+                padding: 18px;
+            }
+
+            th {
+                padding: 12px 16px;
+            }
+
+            td {
+                padding: 13px 16px;
+            }
+
+            .note {
+                padding: 0 18px 18px;
             }
         }
     </style>
 </head>
 
 <body>
-<div class="container">
 
-    <header class="header">
-        <div>
-            <span class="label">IT FEST 6.0 • PANITIA</span>
-            <h1>Alur Penjurian</h1>
-            <p>Panduan seleksi karya, penilaian, dan penentuan pemenang.</p>
-        </div>
+<header class="topbar">
+    <button class="menu-button" id="menuButton"
+            aria-label="Buka atau tutup navigasi"
+            aria-expanded="true">☰</button>
 
-        <nav>
-            <a href="#seleksi">Seleksi Karya</a>
-            <a href="#penilaian">Penilaian</a>
-            <a href="#ranking">Ranking</a>
-        </nav>
-    </header>
-
-    <div class="intro">
-        <h2>Panduan untuk Juri</h2>
-        <p>Ikuti tiga tahapan berikut untuk menentukan pemenang lomba.</p>
+    <div class="brand">
+        <div class="brand-icon">IF</div>
+        <span>IT Fest 6.0</span>
     </div>
 
-    <div class="alur">
-        <div class="card">
-            <h3>01. Seleksi Karya</h3>
-            <p>Periksa kelengkapan, kesesuaian tema, dan aturan lomba.</p>
+    <span class="tag">PANITIA</span>
+</header>
+
+<div class="layout">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-title">MENU PENJURIAN</div>
+
+        <a href="#seleksi" class="active">
+            <span class="symbol">▤</span>
+            Seleksi Karya
+        </a>
+
+        <a href="#penilaian">
+            <span class="symbol">☑</span>
+            Penilaian
+        </a>
+
+        <a href="#ranking">
+            <span class="symbol">▥</span>
+            Ranking Peserta
+        </a>
+    </aside>
+
+    <main class="main">
+        <div class="breadcrumb">
+            Dashboard / <span>Alur Penjurian</span>
         </div>
 
-        <div class="card">
-            <h3>02. Penilaian</h3>
-            <p>Nilai karya berdasarkan kriteria dan bobot yang ditetapkan.</p>
+        <div class="page-heading">
+            <div>
+                <h1>Alur Penjurian</h1>
+                <p>Panduan seleksi karya, penilaian, dan penentuan pemenang.</p>
+            </div>
+
+            <span class="tag">Panduan Juri</span>
         </div>
 
-        <div class="card">
-            <h3>03. Ranking</h3>
-            <p>Urutkan peserta berdasarkan nilai akhir tertinggi.</p>
-        </div>
-    </div>
+        <div class="steps">
+            <article class="step-card">
+                <div class="step-number">01</div>
+                <h2>Seleksi Karya</h2>
+                <p>Periksa kelengkapan berkas, kesesuaian tema, dan aturan lomba.</p>
+            </article>
 
-    <section id="seleksi">
-        <h2>1. Seleksi Karya</h2>
+            <article class="step-card">
+                <div class="step-number">02</div>
+                <h2>Penilaian</h2>
+                <p>Nilai karya berdasarkan kriteria dan bobot yang ditetapkan.</p>
+            </article>
 
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr><th>Kriteria</th><th>Panduan</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Kelengkapan</td><td>Pastikan seluruh berkas tersedia.</td></tr>
-                    <tr><td>Kesesuaian tema</td><td>Periksa relevansi karya dengan tema lomba.</td></tr>
-                    <tr><td>Orisinalitas</td><td>Periksa keaslian sesuai ketentuan lomba.</td></tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <section id="penilaian">
-        <h2>2. Penilaian Karya</h2>
-
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr><th>Kriteria</th><th>Bobot</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Orisinalitas</td><td>25%</td></tr>
-                    <tr><td>Inovasi</td><td>25%</td></tr>
-                    <tr><td>Kesesuaian tema</td><td>20%</td></tr>
-                    <tr><td>Kualitas dan implementasi</td><td>30%</td></tr>
-                    <tr><th>Total</th><th>100%</th></tr>
-                </tbody>
-            </table>
+            <article class="step-card">
+                <div class="step-number">03</div>
+                <h2>Ranking</h2>
+                <p>Urutkan peserta berdasarkan nilai akhir tertinggi.</p>
+            </article>
         </div>
 
-        <h3>Panduan untuk Juri</h3>
-        <div class="panduan">
-            <p><b>90–100:</b> Sangat baik, memenuhi kriteria dengan sangat kuat.</p>
-            <p><b>80–89:</b> Baik, sebagian besar kriteria terpenuhi.</p>
-            <p><b>70–79:</b> Cukup, masih terdapat beberapa kekurangan.</p>
-            <p><b>Di bawah 70:</b> Perlu perbaikan pada kriteria penting.</p>
-            <p><b>Etika:</b> Nilai secara objektif, konsisten, dan tanpa memihak peserta.</p>
-        </div>
+        <section class="panel" id="seleksi">
+            <div class="panel-header">
+                <h2>Seleksi Karya</h2>
+                <p>Periksa persyaratan sebelum karya masuk ke tahap penilaian.</p>
+            </div>
 
-        <small class="catatan">
-            Catatan: Bobot dan skala di atas adalah contoh. Sesuaikan dengan panduan resmi setiap kategori lomba.
-        </small>
-    </section>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Kriteria</th>
+                            <th>Panduan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Kelengkapan</td>
+                            <td>Pastikan seluruh berkas tersedia.</td>
+                        </tr>
+                        <tr>
+                            <td>Kesesuaian tema</td>
+                            <td>Periksa relevansi karya dengan tema lomba.</td>
+                        </tr>
+                        <tr>
+                            <td>Orisinalitas</td>
+                            <td>Periksa keaslian sesuai ketentuan lomba.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-    <section id="ranking">
-        <h2>3. Urutan Pemenang / Ranking</h2>
+        <section class="panel" id="penilaian">
+            <div class="panel-header">
+                <h2>Penilaian Karya</h2>
+                <p>Kriteria dan bobot yang digunakan dalam penilaian.</p>
+            </div>
 
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr><th>Ranking</th><th>Tim</th><th>Nilai</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>1</td><td>Tim Alpha</td><td>92,50</td></tr>
-                    <tr><td>2</td><td>Tim Beta</td><td>88,75</td></tr>
-                    <tr><td>3</td><td>Tim Gamma</td><td>85,25</td></tr>
-                </tbody>
-            </table>
-        </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Kriteria</th>
+                            <th>Bobot</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Orisinalitas</td><td>25%</td></tr>
+                        <tr><td>Inovasi</td><td>25%</td></tr>
+                        <tr><td>Kesesuaian tema</td><td>20%</td></tr>
+                        <tr><td>Kualitas dan implementasi</td><td>30%</td></tr>
+                        <tr class="total-row"><td>Total</td><td>100%</td></tr>
+                    </tbody>
+                </table>
+            </div>
 
-        <p class="catatan">
-            Urutan pemenang ditentukan dari nilai tertinggi. Jika nilai sama, gunakan aturan pemecah seri resmi.
-        </p>
-    </section>
+            <div class="guide">
+                <h3>Panduan untuk Juri</h3>
 
-    <footer>IT Fest 6.0 © 2026</footer>
+                <div class="guide-item">
+                    <strong>90–100 · Sangat Baik</strong>
+                    <p>Memenuhi kriteria dengan sangat kuat.</p>
+                </div>
+
+                <div class="guide-item">
+                    <strong>80–89 · Baik</strong>
+                    <p>Sebagian besar kriteria terpenuhi.</p>
+                </div>
+
+                <div class="guide-item">
+                    <strong>70–79 · Cukup</strong>
+                    <p>Masih terdapat beberapa kekurangan.</p>
+                </div>
+
+                <div class="guide-item">
+                    <strong>Di bawah 70 · Perlu Perbaikan</strong>
+                    <p>Perlu perbaikan pada kriteria penting.</p>
+                </div>
+
+                <div class="guide-item">
+                    <strong>Etika Penilaian</strong>
+                    <p>Nilai secara objektif, konsisten, dan tanpa memihak peserta.</p>
+                </div>
+            </div>
+
+            <p class="note">
+                Catatan: Bobot dan skala di atas adalah contoh. Sesuaikan dengan panduan resmi setiap kategori lomba.
+            </p>
+        </section>
+
+        <section class="panel" id="ranking">
+            <div class="panel-header">
+                <h2>Ranking Peserta</h2>
+                <p>Urutan peserta berdasarkan nilai akhir.</p>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ranking</th>
+                            <th>Tim</th>
+                            <th>Nilai</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>Tim Alpha</td><td>92,50</td></tr>
+                        <tr><td>2</td><td>Tim Beta</td><td>88,75</td></tr>
+                        <tr><td>3</td><td>Tim Gamma</td><td>85,25</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="note">
+                Pemenang ditentukan berdasarkan nilai tertinggi. Jika nilai sama, gunakan aturan pemecah seri resmi.
+            </p>
+        </section>
+
+        <footer>IT Fest 6.0 &copy; 2026</footer>
+    </main>
 </div>
+
+<script>
+    const menuButton = document.getElementById('menuButton');
+    const sidebar = document.getElementById('sidebar');
+
+    menuButton.addEventListener('click', function () {
+        sidebar.classList.toggle('closed');
+
+        const isOpen = !sidebar.classList.contains('closed');
+        menuButton.setAttribute('aria-expanded', isOpen);
+    });
+
+    document.querySelectorAll('.sidebar a').forEach(function (link) {
+        link.addEventListener('click', function () {
+            document.querySelectorAll('.sidebar a').forEach(function (item) {
+                item.classList.remove('active');
+            });
+
+            this.classList.add('active');
+
+            if (window.innerWidth <= 650) {
+                sidebar.classList.add('closed');
+                menuButton.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+</script>
+
 </body>
 </html>
 ```
